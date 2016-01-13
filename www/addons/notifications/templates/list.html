@@ -19,8 +19,8 @@
                     on-infinite="loadMoreNotifications()" >
             </ion-infinite-scroll>
 
-            <div class="padding" ng-if="!notifications || notifications.length <= 0">
-                <p>{{ 'mma.notifications.therearentnotificationsyet' | translate}}</p>
+            <div ng-if="!notifications || notifications.length <= 0">
+                <p class="item">{{ 'mma.notifications.therearentnotificationsyet' | translate}}</p>
             </div>
         </mm-loading>
     </ion-content>
