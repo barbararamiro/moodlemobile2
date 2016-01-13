@@ -7,6 +7,11 @@
     justify-content: flex-end;
 }
 
+.mma-forum-reply-form.item {
+    background-color: $base-background-color;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
 }
 
 .mma-forum-textarea {
