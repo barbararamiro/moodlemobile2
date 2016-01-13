@@ -1,4 +1,4 @@
-<div class="item item-divider" ng-if="showdivider"></div>
+<div class="list list-inset">
 <div class="item item-avatar">
     <img ng-if="post.userpictureurl" ng-src="{{post.userpictureurl}}" mm-external-content mm-user-link courseid="{{courseid}}" userid="{{post.userid}}" alt="" role="presentation">
     <img ng-if="!post.userpictureurl" src="img/user-avatar.png"  alt="" role="presentation">
@@ -17,7 +17,7 @@
     </a>
 </div>
 <div id="mma-forum-reply-form-{{post.id}}" class="item" ng-show="newpost.replyingto === post.id">
-    <form class="list mma-forum-border">
+    <form class="list">
         <label class="item item-input item-stacked-label">
             <span class="input-label">{{ 'mma.mod_forum.subject' | translate }}</span>
             <input type="text" placeholder="{{ 'mma.mod_forum.subject' | translate }}" ng-model="newpost.subject">
@@ -31,4 +31,5 @@
             <button class="button" ng-click="cancel()">{{ 'mm.core.cancel' | translate }}</button>
         </div>
     </form>
+</div>
 </div>
