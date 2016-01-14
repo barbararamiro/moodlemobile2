@@ -22,14 +22,15 @@
             </div>
         </section>
 
-        <section ng-if="showUpload()">
-            <div class="card">
-                <h2 class="item-body">{{ 'mma.files.uploadfiles' | translate }}</h2>
-                <p class="item-body">{{ 'mma.files.clicktoupload' | translate }}</p>
+        <!-- Only shown when the user can upload but not browse files. -->
+        <section class="list" ng-if="showUpload()">
+            <p class="item">{{ 'mma.files.uploadfiles' | translate }}</p>
+            <div class="item item-text-wrap"><p>{{ 'mma.files.clicktoupload' | translate }}</p></div>
+            <div class="item">
+                <a class="button button-block" ng-click="add()">
+                    <i class="icon ion-plus"></i> {{ 'mma.files.uploadafile' | translate }}
+                </a>
             </div>
-            <a class="button button-block" ng-click="add()">
-                <i class="icon ion-plus"></i> {{ 'mma.files.uploadafile' | translate }}
-            </a>
         </section>
     </ion-content>
 </ion-view>
