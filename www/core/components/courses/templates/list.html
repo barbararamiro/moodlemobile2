@@ -13,16 +13,14 @@
                     <input type="text" placeholder="{{ 'mm.courses.filtermycourses' | translate}}" ng-model="filterText">
                 </label>
             </div>
-            <section ng-repeat="course in courses | filter:{fullname: filterText}" class="list card">
+            <section ng-repeat="course in courses | filter:{fullname: filterText}" class="list list-inset">
                 <a class="item" ui-sref="site.mm_course({course: course})" title="{{course.fullname}}">
                     <h2><mm-format-text watch="true">{{course.fullname}}</mm-format-text></h2>
                 </a>
                 <div class="item item-text-wrap" ng-show="course.summary">
-                    <p>
-                        <summary>
-                            <mm-format-text class="mm-content-with-float" watch="true" shorten="40%" expand-on-click="true">{{course.summary}}</mm-format-text>
-                        </summary>
-                    </p>
+                    <summary>
+                        <p><mm-format-text class="mm-content-with-float" watch="true" shorten="40%" expand-on-click="true">{{course.summary}}</mm-format-text></p>
+                    </summary>
                 </div>
                 <div class="item tabs tabs-icon-left" ng-show="course._handlers && course._handlers.length">
                     <a ng-repeat="handler in course._handlers | orderBy:'-priority'" ng-controller="handler.controller" ng-click="action($event, course)" class="tab-item active" title="{{title | translate}}">
@@ -34,8 +32,10 @@
                 </div>
             </section>
             <div ng-if="!courses || !courses.length">
-                <p>{{ 'mm.courses.nocourses' | translate }}</p>
-                <p ng-if="searchEnabled">{{ 'mm.courses.searchcoursesadvice' | translate }}</p>
+                <div class="item">
+                    <p>{{ 'mm.courses.nocourses' | translate }}</p>
+                    <p ng-if="searchEnabled">{{ 'mm.courses.searchcoursesadvice' | translate }}</p>
+                </div>
             </div>
         </mm-loading>
     </ion-content>
