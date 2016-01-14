@@ -148,6 +148,11 @@ em {
     background-color: $item-default-bg;
 }
 
+// Fix to show full width. Ionic shows only 18 characters.
+.item-input-inset .item-input-wrapper input {
+  width: 100%;
+}
+
 // Split pane.
 .mm-split-pane {
   @include display-flex();
